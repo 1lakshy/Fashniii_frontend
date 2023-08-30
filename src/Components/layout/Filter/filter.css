@@ -1,0 +1,23 @@
+.filterBox{
+    min-width: 16rem;
+    height: max-content;
+    background: #fff;
+    /* margin-left: 1rem; */
+
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    
+}
+
+
+.filterSubBox{
+    height: 3rem;
+    height: max-content;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid #d1d1d1;
+
+}
+.filterSubBox:last-child{
+    border-bottom: none;
+}

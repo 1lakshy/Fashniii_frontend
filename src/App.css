@@ -24,6 +24,18 @@
   color: white;
 }
 
+.subHeading{
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: 'Nunito', sans-serif;
+}
+.subHeading-1{
+  font-size: .8rem;
+  font-weight: 800;
+  color: rgb(23, 23, 23);
+  font-family: 'Nunito', sans-serif;
+}
+
 .App-link {
   color: #61dafb;
 }
