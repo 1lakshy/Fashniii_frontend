@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +13,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+input{
+  box-shadow: none;
 }
 
 .App-header {
@@ -32,8 +38,15 @@
 .subHeading-1{
   font-size: .8rem;
   font-weight: 800;
-  color: rgb(23, 23, 23);
+  /* color: rgb(23, 23, 23); */
+  color: #38333f;
   font-family: 'Nunito', sans-serif;
+}
+
+.pModified{
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #38333f;
 }
 
 .App-link {
@@ -48,3 +61,31 @@
     transform: rotate(360deg);
   }
 }
+
+.cardList{
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: auto;
+  
+}
+
+.cardList::-webkit-scrollbar{
+  height: 0.5vw;
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 0.8vw; /* adjust as needed */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* or any color you prefer */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* or any color you prefer */
+  border-radius: 1rem;
+}
+

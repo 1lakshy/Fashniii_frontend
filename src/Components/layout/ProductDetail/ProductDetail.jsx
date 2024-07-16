@@ -6,20 +6,31 @@ import { getProductDetail } from '../../../Actions/productAction';
 import Loading from '../Loading/Loading';
 import ReactStars from "react-rating-stars-component";
 import Btn from '../Btn';
+import Products from '../../../function/product';
+import { getProducts } from '../../../Actions/productAction';
+// import Nav2 from '../Components/layout/Nav/Nav2';
 
-const ProductDetail = ({}) => {
+const ProductDetail = ({ }) => {
   const params = useParams();
   console.log(params);
   const dispatch = useDispatch();
   const { product, loading } = useSelector((state) => state.productDetail);
- 
-  const options ={
-    edit:false,
-    activeColor:"tomato",
-    size:window.innerWidth < 600 ? 16 : 18,
-    value:product.rating,
-    isHalf:true,
-}
+
+  const options = {
+    edit: false,
+    activeColor: "tomato",
+    size: window.innerWidth < 600 ? 16 : 18,
+    value: product.rating,
+    isHalf: true,
+  }
+
+  const { error, products, productCount } = useSelector(
+    (state) => state.products
+  );
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
 
   // data.product={"product":{"images":[{}]}}
 
@@ -32,6 +43,7 @@ const ProductDetail = ({}) => {
 
   return (
     <>
+     {/* <Nav2/> */}
       {loading ? (
         <Loading />
       ) : (
@@ -47,9 +59,9 @@ const ProductDetail = ({}) => {
               <div className="productImg">
                 {product.images &&
                   // product.images.map((element, index) => (
-                    <img src={product.images[0].url}  alt="product" />
+                  <img src={product.images[0].url} alt="product" />
                 }
-                  {/* // ))} */}
+                {/* // ))} */}
               </div>
             </div>
             <div className="productInfo">
@@ -62,12 +74,12 @@ const ProductDetail = ({}) => {
                 <h1 className='heading'>₹{product.price}</h1>
               </div>
               <div className="detail-box-3">
-                <div className="detail-3-1">
+                <div className="detail-3-1 flex" style={{ alignItems: "center" }}>
                   <button>-</button>
-                  <input type="number" value={1} className='input' />
+                  <input type="number" value={1} style={{ width: "4rem", height: "2rem", background: "#fff", borderRadius: ".5rem", margin: ".25rem", padding: ".25rem" }} />
                   <button>+</button>
                 </div>
-                <Btn text="Add toCart" color="bg-black text-white"/>
+                <Btn text="Add toCart" color="bg-black text-white" />
                 <p className={product.stock < 1 ? 'redText' : 'greenText'}>
                   Status :{" "}
                   {product.stock < 1 ? 'Out of Stock' : 'InStock'}
@@ -75,14 +87,18 @@ const ProductDetail = ({}) => {
               </div>
               <div className="detail-box-4">
                 <div className="detail-box-4-1">
-                <ReactStars {...options}/> 
+                  <ReactStars {...options} />
                 </div>
                 <p className='subHeading'>Description:</p><p>{product.description}</p>
               </div>
             </div>
           </div>
         </div>
+
       )}
+      <div className="Products flex flex-wrap pl-12">
+        {products && products.map((product) => <Products product={product} />)}
+      </div>
     </>
   );
 };

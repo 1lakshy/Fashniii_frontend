@@ -1,38 +1,42 @@
 exports.category = [
     {
-        view:"/Category/c1.jpg",
-        text:"Casual Women Wear"
+        view:"/Category/c1.avif",
+        text:"Formal"
     },
     {
-        view:"/Category/c2.jpg",
-        text:"Formal Men Wear"
+        view:"/Category/c2.avif",
+        text:"Casual"
     },
     {
-        view:"/Category/c3.jpg",
+        view:"/Category/c3.avif",
         text:"Boots"
     },
     {
-        view:"/Category/c4.jpg",
-        text:"Formal Women Wear"
+        view:"/Category/c4.avif",
+        text:"Formal"
     },
     {
-        view:"/Category/c5.jpg",
-        text:"Women Sendals"
+        view:"/Category/c5.avif",
+        text:"Traditional"
     },
     {
-        view:"/Category/c6.jpg",
-        text:"Casual Men Wear"
+        view:"/Category/c6.avif",
+        text:"Kurti"
     },
-    // {
-    //     view:"/Category/c7.jpg",
-    //     text:"Women Shoes"
-    // },
-    // {
-    //     view:"/Category/c8.jpg",
-    //     text:"Men Shoes"
-    // },
-    // {
-    //     view:"/Category/c9.jpg",
-    //     text:"Headphones"
-    // },
+    {
+        view:"/Category/c7.avif",
+        text:"Shoes"
+    },
+    {
+        view:"/Category/c8.avif",
+        text:"Trousers"
+    },
+    {
+        view:"/Category/c9.avif",
+        text:"Winter"
+    },
+    {
+        view:"/Category/c10.avif",
+        text:"Casual"
+    },
 ]

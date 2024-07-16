@@ -44,8 +44,14 @@ const HeroContent = () => {
       </div>
       <div className="red w-[10rem] h-[10rem] lg:w-[30rem] lg:h-[30rem] lg:absolute lg:-right-32 lg:-top-28 rounded-full bg-orange-500 z-20 absolute -right-8 -top-4"></div>
       <div className="cyan w-[25rem] h-[25rem] lg:w-[80rem] lg:h-[80rem] lg:absolute lg:-right-32 lg:-top-20 rounded-full bg-cyan-300 z-0 "></div>
-      <div className="green lg:w-[20rem] lg:h-[40rem] lg:absolute lg:right-32 lg:top-20 bg-green-400 z-50 ">
+      <div className="green lg:w-[20rem] lg:h-[30rem] lg:absolute lg:right-32 bg-white lg:top-20 z-50 text-center ">
         <img src="/HeroDeme/Sponcered.jpg" alt="" srcset="" />
+        <p className='p-[1rem]'>
+          "Captivate in the timeless charm of our blue sarees. Each drape embodies elegance and sophistication, making every moment memorable. Embrace the allure of blue and redefine grace with our exquisite collection."
+        </p>
+        <button className="bg-red-300 lg:w-[6rem] lg:h-[2rem] my-2 rounded-full">
+          Explore
+        </button>
       </div>
     </div>
   );

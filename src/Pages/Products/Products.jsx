@@ -22,11 +22,20 @@ const Products = () => {
   };
   const params = useParams();
   const keyword = params.keyword;
+  const [price,setPrice] = useState([0,10000]);
+  const [category,setCategory] = useState('');
 
   useEffect(() => {
-    dispatch(getProducts(keyword, currentPage));
-  }, [dispatch, keyword, currentPage]);
+    dispatch(getProducts(keyword, currentPage,price));
+  }, [dispatch, keyword, currentPage,price]);
 
+  const handlePriceValue = (value) => {
+    setPrice(value);
+  };
+  const handleCategoryValue = (value) => {
+    setCategory(value);
+  };
+  console.log(price)
   return (
     <>
       {loading ? (
@@ -34,7 +43,7 @@ const Products = () => {
       ) : (
         <>
           <div className="flex main ">
-            <Filter />
+            <Filter priceValue={handlePriceValue} category={handleCategoryValue}/>
             <div className="">
               <h1 className="heading mx-4">Products</h1>
               <div className="products flex flex-wrap">

@@ -8,7 +8,7 @@ import {
 import {motion} from "framer-motion";
 import SearchBox from '../SearchBox/SearchBox';
 import "./nav.css"
-import { useParams,useLocation } from 'react-router-dom';
+import { useParams,useLocation, Link } from 'react-router-dom';
 
 
 
@@ -31,19 +31,19 @@ console.log(location)
       <ul className="ulStyle ">
         <li className='navLi2 navheading font-nunito'>
           {/* <CiShop className='text-3xl' /> */}
-          <p className='text-base font-nunito'>Home</p>
+          <p className='text-base font-nunito'><Link to="/">Home</Link></p>
         </li>
         <li className='navLi2 navheading'>
           {/* <CiHeart className='text-3xl'/> */}
-          <p className='text-base'>Favorite</p>
+          <p className='text-base'><Link to="/products">Products</Link></p>
         </li>
         <li className='navLi2 navheading'>
           {/* <CiUser className='text-3xl'/> */}
-          <p className='text-base'>Chat</p>
+          <p className='text-base'><Link to="/login">Login</Link></p>
         </li>
         <li className='navLi2 navheading'>
           {/* <CiShoppingCart className='text-3xl' /> */}
-          <p className='text-base'>Cart</p>
+          <p className='text-base'><Link to="/cart">Cart</Link></p>
         </li>
         {/* <li className='navLi2 navheading'> */}
          

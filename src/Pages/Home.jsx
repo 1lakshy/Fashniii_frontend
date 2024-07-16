@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../Components/layout/Footer/Footer';
 import Products from '../function/product';
 import Loading from '../Components/layout/Loading/Loading';
+import Nav from '../Components/Nav';
+import Nav2 from '../Components/layout/Nav/Nav2';
 // import styled from "styled-components"
 
 const Home = () => {
@@ -25,14 +27,20 @@ const Home = () => {
   return (
     <>
     {loading ? (<Loading/>):(
+     
           <div className="" style={{ height: 'max-content' }}>
+          <Nav2/>
           <MetaData title="Fashniii" />
           <HeroSection />
           <Categories />
           {/* <AllProducts/> */}
+          <div className="w-[95%] mx-auto py-8">
+          <h2 className="heading my-1"> Popular Products</h2>
           <div className="Products flex flex-wrap">
             {products && products.map((product) => <Products product={product} />)}
           </div>
+          </div>
+
           <Footer />
         </div>
     )}
